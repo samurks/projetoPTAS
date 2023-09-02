@@ -1,0 +1,19 @@
+body {
+    font-family: "Arial", sans-serif;
+    background-image: url("https://www.10wallpaper.com/wallpaper/2560x1600/1811/Universe_Starry_Sky_Space_HD_Nebula_2560x1600.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: #0c2340;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+  }
+
+  h1{
+    text-align: center;
+  }
+
+  .input{
+    text-align: center;
+    margin-top: 50px;
+  }
