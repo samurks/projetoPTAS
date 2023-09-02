@@ -9,11 +9,13 @@ body {
     padding: 0;
   }
 
-  h1{
-    text-align: center;
-  };
-
-  .input{
-    text-align: center;
+  .inputPlaneta{
+   
     margin-top: 50px;
+    text-align: center;
+  }
+
+  h1{
+    margin-top: 350px;
+    text-align: center;
   }

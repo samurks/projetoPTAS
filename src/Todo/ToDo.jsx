@@ -30,7 +30,7 @@ export default function ToDo() {
         <div class="container">
             <Link class="links"to="/">Voltar para pagina principal</Link>
             <h1>Lista de Planetas</h1>
-            <form onSubmit={salvar}>
+            <form  class="inputPlaneta"onSubmit={salvar}>
                 <input type="text"
                     value={atividade}
                     onChange={(e) => { setAtividade(e.target.value) }} />
