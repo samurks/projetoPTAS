@@ -28,7 +28,9 @@ export default function ToDo() {
     }
     return (
         <div class="container">
+            <div className="link-container">
             <Link class="links"to="/">Voltar para pagina principal</Link>
+            </div>
             <h1>Lista de Planetas</h1>
             <form  class="inputPlaneta"onSubmit={salvar}>
                 <input type="text"
