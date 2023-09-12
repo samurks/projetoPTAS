@@ -39,7 +39,7 @@ export default function ToDo() {
             {lista.map((ativ) => (
                 <ul key={ativ.id}>
                     <li>
-                        <p>{ativ.id} {ativ.atividade}</p>
+                        <p> {ativ.atividade}</p>
                         <button class="remove-button" onClick={() => remover(ativ.id)}>
                             Remover
                         </button>
