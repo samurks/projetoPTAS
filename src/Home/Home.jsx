@@ -8,6 +8,7 @@ export default function Home() {
         <div class="containerHome">
             <h1>Agenda planetaria</h1>
             <p>Explore o fascinante mundo dos planetas e da astrologia!</p>
+            <br></br>
             <Link class="linkHome" to="/todo">Ir para proxima pagina</Link>
         </div>
     );

@@ -104,12 +104,12 @@ li p {
     color: white;
     font-family: Arial, sans-serif;
     text-align: center;
-    margin: 0;
-    padding: 0;
+  
   }
   
   .containerHome {
     padding: 2rem;
+      margin-top: 300px;
   }
   
   h1 {
@@ -118,8 +118,6 @@ li p {
   }
   
   .linkHome {
-    text-align: center;
-    
     background-color: #ff5722;
     color: white;
     padding: 0.5rem 1rem;
@@ -130,10 +128,12 @@ li p {
   }
   
   .linkHome:hover {
-    background-color: #e64a19;
-  }
+      background-color: #555;
+    }
+  
 
   .link-home {
+    transition: background-color 0.3s ease;
     display: inline-block;
     background-color: #ff5722;
     text-decoration: none;
@@ -145,7 +145,7 @@ li p {
     font-size: 1rem;
     padding: 0.5rem 1rem;
     border-radius: 5px;
-    z-index: 1; /* Certifique-se de que o link fique acima de outros elementos, se houver */
+    transition: background-color 0.3s ease;
   }
   
   .link-home:hover {
