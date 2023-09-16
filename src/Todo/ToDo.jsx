@@ -59,7 +59,8 @@ export default function ToDo() {
                     <li>
                         <p className="idAtiv"> {ativ.id} {ativ.atividade} 
                         </p>
-                        <img src={ativ.imagem}></img>
+                        <img className="Planeta"src={ativ.imagem}></img>
+                        <br></br>
                         <button className="remove-button" onClick={() => remover(ativ.id)}>
                             Remover
                         </button>
