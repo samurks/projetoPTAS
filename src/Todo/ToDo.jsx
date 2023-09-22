@@ -15,6 +15,7 @@ export default function ToDo() {
             id: id,
             imagem:imagem
         }]);
+        console.log(lista)
         setId(id + 1);
         setAtividade("");
         setimagem("");
