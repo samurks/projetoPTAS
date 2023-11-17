@@ -3,15 +3,18 @@ import { Link } from "react-router-dom";
 import "./style.css";
 
 export default function ToDo() {
-  const listaLocalStorage = JSON.parse(localStorage.getItem("lista")) || [];
+  const listaLocalStorage = JSON.parse(localStorage.getItem("Lista")) || [];
   const [atividade, setAtividade] = useState("");
-  const [lista, setLista] = useState(listaLocalStorage);
-  const [id, setId] = useState(1);
+  const [lista, setLista] = useState( listaLocalStorage || []);
+  const [id, setId] = useState(listaLocalStorage [listaLocalStorage.length - 1]?.id + 1 || 1);
   const [imagem, setImagem] = useState("");
 
-  useEffect(() => {
-    localStorage.setItem("lista", JSON.stringify(lista));
-  }, [lista]);
+
+  
+  useEffect(
+  () => {localStorage.setItem("Lista", JSON.stringify
+  (lista))}, [lista]);
+
 
   const salvar = (e) => {
     e.preventDefault();
@@ -50,7 +53,7 @@ export default function ToDo() {
                 <input
                     type="text"
                     value={imagem}
-                    onChange={(e) => setimagem(e.target.value)}
+                    onChange={(e) => setImagem(e.target.value)}
                     placeholder="URL da Imagem"
                 />
                 <button>ADICIONAR</button>
