@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./style.css";
 
 export default function ToDo() {
-  const listaLocalStorage = JSON.parse(localStorage.getItem("Lista")) || [];
+  const listaLocalStorage = JSON.parse(localStorage.getItem("lista")) || [];
   const [atividade, setAtividade] = useState("");
   const [lista, setLista] = useState( listaLocalStorage || []);
   const [id, setId] = useState(listaLocalStorage [listaLocalStorage.length - 1]?.id + 1 || 1);
@@ -12,7 +12,7 @@ export default function ToDo() {
 
   
   useEffect(
-  () => {localStorage.setItem("Lista", JSON.stringify
+  () => {localStorage.setItem("lista", JSON.stringify
   (lista))}, [lista]);
 
 
@@ -60,6 +60,7 @@ export default function ToDo() {
             </form>
         </div>
         {lista.map((ativ) => (
+          <Link to={`/detalhe/${ativ.id}`}>
             <ul key={ativ.id}>
                 <li>
                     <p className="idAtiv"> {ativ.id} {ativ.atividade} 
@@ -71,7 +72,9 @@ export default function ToDo() {
                     </button>
                 </li>
             </ul>
+            </Link>
         ))}
     </div>
+    
 );
 }

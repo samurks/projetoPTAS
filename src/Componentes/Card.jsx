@@ -1,6 +1,8 @@
-export default function Card(){
+export default function Card({planeta}){
     return (
-<h1>(produto.atividade)</h1>
-    );
+<h1>
+    {planeta.ativ}
+    </h1>
+    )
     
 };
