@@ -65,21 +65,20 @@ export default function ToDo() {
           <input
             type="text"
             value={descricao}
-            onChange={(e) => setUrl(e.target.value)}
+            onChange={(e) => setDescricao(e.target.value)}
             placeholder="Descricao do video"
           />
           <button>Registrar Video</button>
         </form>
+        <iframe
+        width="853"
+        height="480"
+        src={'https://www.youtube.com/embed/' + vid.url.slice(17)} 
+        frameborder="0"
+        allow="accelerometrer; autoplay; clipboard-write; encrypted-media;">
+        </iframe>
       </div>
-   
+    </div>
 
-    <iframe 
-    widht="853"
-    height="480"
-    src=
-    {"https://www.youtube/embed/" + video.url.slice(17)}
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media">
-    </iframe>
-
-  
+  );
+}
