@@ -1,15 +1,17 @@
-import { useState } from "react";
-import { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Home() {
    
+const videos = JSON.parse(localStorage.getItem("lista")) || [];
+
     return (
-        <div className="containerHome">
-            <h1>AGENDA PLANETARIA</h1>
-            <p>Organize e Explore o fascinante mundo dos planetas e da astrologia!</p>
+        <div>
+            <h1>your tube</h1>
+            <p>sua pagina de videos favorita!!!</p>
             <br></br>
-            <Link className="link-agenda" to="/todo">Ir para proxima pagina</Link>
+            
+            <Link to="/todo">Ir para proxima pagina</Link>
         </div>
     );
 }
