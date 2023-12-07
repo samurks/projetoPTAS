@@ -1,7 +1,7 @@
 export default function Card({planeta}){
     return (
 <h1>
-    {planeta.ativ}
+    {planeta.ativividade}
     </h1>
     )
     
