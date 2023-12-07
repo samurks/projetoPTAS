@@ -4,16 +4,19 @@ import "./style.css";
 
 export default function ToDo() {
   const listaLocalStorage = JSON.parse(localStorage.getItem("lista")) || [];
-  const [atividade, setAtividade] = useState("");
-  const [lista, setLista] = useState( listaLocalStorage || []);
-  const [id, setId] = useState(listaLocalStorage [listaLocalStorage.length - 1]?.id + 1 || 1);
-  const [imagem, setImagem] = useState("");
+  const [video, setVideo] = useState("");
+  const [lista, setLista] = useState(listaLocalStorage || []);
+  const [id, setId] = useState(listaLocalStorage[listaLocalStorage.length - 1]?.id + 1 || 1);
+  const [url, setUrl] = useState("");
+  const [descricao, setDescricao] = useState("")
 
 
-  
+
   useEffect(
-  () => {localStorage.setItem("lista", JSON.stringify
-  (lista))}, [lista]);
+    () => {
+      localStorage.setItem("lista", JSON.stringify
+        (lista))
+    }, [lista]);
 
 
   const salvar = (e) => {
@@ -21,60 +24,61 @@ export default function ToDo() {
     setLista([
       ...lista,
       {
-        atividade: atividade,
+        video: video,
         id: id,
-        imagem: imagem,
+        url: url,
+        descricao: descricao,
       },
     ]);
     setId(id + 1);
-    setAtividade("");
-    setImagem("");
+    setVideo("");
+    setUrl("");
+    setDescricao("")
   };
 
   const remover = (id) => {
-    const novaLista = lista.filter((ativ) => ativ.id !== id);
+    const novaLista = lista.filter((vid) => vid.id !== id);
     setLista(novaLista);
   };
 
   return (
-    <div className="lista-planetas">
-       <Link to="/" className="link-home">Voltar para a página principal</Link>
-        <h1>Lista de Planetas</h1>
-        <div className="form-container">
-            <form onSubmit={salvar}>
-                <input
-                    type="text"
-                    value={atividade}
-                    onChange={(e) => setAtividade(e.target.value)}
-                    placeholder="Planeta"
-                />
-                
-        
-                <input
-                    type="text"
-                    value={imagem}
-                    onChange={(e) => setImagem(e.target.value)}
-                    placeholder="URL da Imagem"
-                />
-                <button>ADICIONAR</button>
-            </form>
-        </div>
-        {lista.map((ativ) => (
-          <Link to={`/detalhe/${ativ.id}`}>
-            <ul key={ativ.id}>
-                <li>
-                    <p className="idAtiv"> {ativ.id} {ativ.atividade} 
-                    </p>
-                    <img className="Planeta"src={ativ.imagem}></img>
-                    <br></br>
-                    <button className="remove-button" onClick={() => remover(ativ.id)}>
-                        Remover
-                    </button>
-                </li>
-            </ul>
-            </Link>
-        ))}
+    <div>
+      <Link to="/">Voltar para o Home</Link>
+      <h1>Your Tube</h1>
+      <div>
+        <form onSubmit={salvar}>
+
+          <input
+            type="text"
+            value={video}
+            onChange={(e) => setVideo(e.target.value)}
+            placeholder="your video"
+          />
+
+          <input
+            type="text"
+            value={url}
+            onChange={(e) => setUrl(e.target.value)}
+            placeholder="Url do Video"
+          />
+
+          <input
+            type="text"
+            value={descricao}
+            onChange={(e) => setDescricao(e.target.value)}
+            placeholder="Descricao do video"
+          />
+          <button>Registrar Video</button>
+        </form>
+        <iframe
+        width="853"
+        height="480"
+        src={'https://www.youtube.com/embed/' + vid.url.slice(17)} 
+        frameborder="0"
+        allow="accelerometrer; autoplay; clipboard-write; encrypted-media;">
+        </iframe>
+      </div>
     </div>
-    
-);
+
+  );
 }
